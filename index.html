@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <form class="login">
+        <h2>Welcome, User! Order your food Now!...</h2>
+        <select id="your_order">
+            <option value="biriyani">biriyani</option>
+            <option value="dhosa">dhosa</option>
+            <option value="idly">idly</option>
+            <option value="pizza">pizza</option>
+        </select>
+        <input type="number" placeholder="Quantity" id="quantity" />
+        <input type="button" value="Order Now" onclick="order_now()" />
+        <div class="links">
+          <a href="#" id="output"></a>
+         
+        </div>
+      </form>
+
+
+      <script>
+        function order_now(){
+            console.log("yes order receieved");
+            var your_order=document.getElementById('your_order').value;
+            console.log(your_order);
+            var quantity=document.getElementById('quantity').value;
+            console.log(quantity); 
+
+            var one_biriyani=100;
+            var one_dhosa=30;
+            var one_idly=10;
+
+            if (your_order=="biriyani"){
+                var total=parseInt(one_biriyani)*parseInt(quantity);
+                if (total>=1000){
+                    offer_total=total-200
+                    document.getElementById('output').innerHTML='your offer total bill is '+offer_total;
+                }
+                else{
+                    document.getElementById('output').innerHTML='your total bill is '+total;
+                }
+               
+
+            }
+            else if (your_order=="dhosa"){
+                var total=parseInt(one_dhosa)*parseInt(quantity);
+                if (total>=1000){
+                    offer_total=total-200
+                    document.getElementById('output').innerHTML='your offer total bill is '+offer_total;
+                }
+                else{
+                    document.getElementById('output').innerHTML='your total bill is '+total;
+                }
+
+
+            }
+            else if (your_order=="idly"){
+                var total=parseInt(one_idly)*parseInt(quantity);
+                if (total>=1000){
+                    offer_total=total-200
+                    document.getElementById('output').innerHTML='your offer total bill is '+offer_total;
+                }
+                else{
+                    document.getElementById('output').innerHTML='your total bill is '+total;
+                }
+
+
+            }
+            else{
+                document.getElementById('output').innerHTML='sorry pizza is not available';
+
+                
+            }
+
+        }
+      </script>
+</body>
+</html>
